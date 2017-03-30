@@ -75,7 +75,7 @@
 		console.log("ing")
 		 var tou = e.targetTouches[ 0 ];
 //		 console.log(tou);
-		var index = calculate.getIndex(tou.pageX-10, tou.pageY);
+		var index = calculate.getIndex(tou.pageX-15, tou.pageY);
 		if(index) {
 			if(!flagObj[index]) {
 				UI.trace(index);
@@ -83,7 +83,7 @@
 				traceArr.push(index);
 			}
 
-			console.log(traceArr);
+//			console.log(traceArr);
 		}
 	}
 
