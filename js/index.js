@@ -229,4 +229,9 @@
 			UI.showInfo("请设置手势密码");
 		}
 	}
+	document.body.addEventListener('touchmove',function(event){
+
+       event.preventDefault();
+
+},false);
 })();
