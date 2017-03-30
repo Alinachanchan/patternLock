@@ -27,7 +27,7 @@
 			for(var i = 0; i < row; i++) {
 				for(var j = 0; j < col; j++) {
 					ctx.beginPath();
-					ctx.arc(j * size + 0.5 * size, i * size + 0.5 * size, 0.2 * size, 0, 2 * Math.PI);
+					ctx.arc(j * size + 0.5 * size, i * size + 0.5 * size, 0.3 * size, 0, 2 * Math.PI);
 					ctx.fill();
 					ctx.stroke();
 					ctx.closePath();
@@ -41,7 +41,7 @@
 			var indexPosi = calculate.getPosi(index);
 			ctx.save();
 			ctx.beginPath();
-			ctx.arc(indexPosi.x, indexPosi.y, 0.2 * size, 0, 2 * Math.PI);
+			ctx.arc(indexPosi.x, indexPosi.y, 0.3 * size, 0, 2 * Math.PI);
 			ctx.fillStyle = "#1E90FF";
 			ctx.fill();
 			ctx.closePath();
@@ -107,7 +107,7 @@
 			var mj = x % size;
 			var mi = y % size;
 
-			if(mj > 0.4 * size && mj < 0.8 * size && mi > 0.4 * size && mi < 0.8 * size) {
+			if(mj > 0.2 * size && mj < 0.8 * size && mi > 0.2 * size && mi < 0.8 * size) {
 				return i * col + j + 1; //[1-9]
 			}
 			return 0;
