@@ -72,7 +72,10 @@
 
 	//鼠标移动处理函数     输入手势密码
 	function hander(e) {
-		var index = calculate.getIndex(e.offsetX, e.offsetY);
+		console.log("ing")
+		 var tou = e.targetTouches[ 0 ];
+//		 console.log(tou);
+		var index = calculate.getIndex(tou.pageX, tou.pageY);
 		if(index) {
 			if(!flagObj[index]) {
 				UI.trace(index);
@@ -126,18 +129,25 @@
 
 	window.onload = function() {
 		UI.draw();
-		canvas.onmousedown = function(e) {
+		canvas.addEventListener("touchstart",function(e){
 			console.log("mousedown");
 			traceArr.length = 0;
-			canvas.onmousemove = function(e) {
-
-				hander(e);
-			}
-		}
-		canvas.onmouseup = function(e) {
-			console.log("mouseup");
-			canvas.onmousemove = null;
-
+			canvas.addEventListener("touchmove",hander,false); 
+		},false);
+		
+//		canvas.ontouchstart = function(e) {
+//			
+//			console.log("mousedown");
+//			traceArr.length = 0;
+//			canvas.ontouchmove = function(e) {
+//              var touch = e.targetTouches[ 0 ];
+//				hander(touch);
+//			}
+//		}
+       canvas.addEventListener("touchend",function(e){
+       	console.log("mouseup");
+//			canvas.ontouchmove = null;
+            canvas.removeEventListener("mousemove",hander,false);
 			if(state == "set") {
 				if(traceArr.length < minLength) {
 					UI.showInfo("长度不能小于" + minLength);
@@ -168,7 +178,42 @@
 				}
 			}
 			reset();
-		}
+       },false);
+//		canvas.ontouchend = function(e) {
+//			console.log("mouseup");
+//			canvas.ontouchmove = null;
+//
+//			if(state == "set") {
+//				if(traceArr.length < minLength) {
+//					UI.showInfo("长度不能小于" + minLength);
+//
+//				} else {
+//					traceArr2.length = 0;
+//					for(var i = 0; i < traceArr.length; i++) {
+//						traceArr2[i] = traceArr[i];
+//					}
+//					state = "again"
+//					UI.showInfo("请再输一次");
+//				}
+//
+//			} else if(state == "again") {
+//				if(traceArr.toString() == traceArr2.toString()) {
+//					state = "success";
+//					lockModel.saveLock(traceArr);
+//					UI.showInfo("设置成功");
+//				} else {
+//					state = "set";
+//					UI.showInfo("两次输入不正确，请重新输入");
+//				}
+//			} else if(state == "check") {
+//				if(lockModel.checkLock(traceArr)) {
+//					UI.showInfo("密码正确    验证通过");
+//				} else {
+//					UI.showInfo("密码不正确  请重新验证");
+//				}
+//			}
+//			reset();
+//		}
 		var btn_set = document.getElementById("setLock");
 		var btn_check = document.getElementById("checkLock");
 
