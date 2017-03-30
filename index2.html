@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		
+	</head>
+	<body>
+		<canvas id="mycanvas" width="300" height="300" style="display: block; margin: auto;">您的浏览器暂不支持canvas，请移驾谷歌浏览器！</canvas>
+		
+		<script>
+		window.onload = function(){
+			
+		var canvas = document.getElementById('mycanvas');
+	     var ctx = canvas.getContext('2d');
+			canvas.addEventListener( 'touchmove',drawing,false);	
+		
+		function drawing(event){
+			 console.log(1111);
+     
+
+     var touch=event.touches[0];
+
+     ctx.beginPath();
+
+     ctx.arc(touch.pageX-10,touch.pageY-10,20,0,2*Math.PI,true);
+
+      ctx.fill();
+
+      ctx.stroke();
+		}
+		}
+		</script>
+	</body>
+</html>
