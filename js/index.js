@@ -75,7 +75,7 @@
 		console.log("ing")
 		 var tou = e.targetTouches[ 0 ];
 //		 console.log(tou);
-		var index = calculate.getIndex(tou.pageX-15, tou.pageY-15);
+		var index = calculate.getIndex(tou.pageX-10, tou.pageY);
 		if(index) {
 			if(!flagObj[index]) {
 				UI.trace(index);
@@ -132,6 +132,7 @@
 		canvas.addEventListener("touchstart",function(e){
 			console.log("mousedown");
 			traceArr.length = 0;
+			hander(e);
 			canvas.addEventListener("touchmove",hander,false); 
 		},false);
 		
