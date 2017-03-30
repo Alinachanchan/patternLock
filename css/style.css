@@ -1,0 +1,133 @@
+/*reset start*/
+html {
+	font-size: 625%;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-size: .14rem;
+	background-color: #eaeaea;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,
+img {
+	border: 0
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: normal
+}
+
+ol,
+ul {
+	list-style: none
+}
+
+caption,
+th {
+	text-align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal
+}
+
+q:before,
+q:after {
+	content: ''
+}
+
+abbr,
+acronym {
+	border: 0
+}
+
+body,
+input,
+select,
+button,
+textarea,
+a {
+	font-family: "微软雅黑", sans-serif, Tahoma, Geneva;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+/*reset end*/
+
+/*app style start*/
+.control{
+	margin: .3rem auto;
+	text-align: center;
+}
+.control div{
+	margin-top: .1rem;
+}
+.control div input{
+	margin-right: .1rem;
+}
+#info{
+	margin: .2rem auto;
+	font-size: .2rem;
+	text-align: center;
+}
+/*app style end*/
