@@ -107,7 +107,7 @@
 			var mj = x % size;
 			var mi = y % size;
 
-			if(mj > 0.1 * size && mj < 0.9 * size && mi > 0.1 * size && mi < 0.9 * size) {
+			if(mj > 0.2 * size && mj < 0.8 * size && mi > 0.2 * size && mi < 0.8 * size) {
 				return i * col + j + 1; //[1-9]
 			}
 			return 0;
