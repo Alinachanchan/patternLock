@@ -27,7 +27,7 @@
 			for(var i = 0; i < row; i++) {
 				for(var j = 0; j < col; j++) {
 					ctx.beginPath();
-					ctx.arc(j * size + 0.5 * size, i * size + 0.5 * size, 0.3 * size, 0, 2 * Math.PI);
+					ctx.arc(j * size + 0.5 * size, i * size + 0.5 * size, 30, 0, 2 * Math.PI);
 					ctx.fill();
 					ctx.stroke();
 					ctx.closePath();
@@ -41,7 +41,7 @@
 			var indexPosi = calculate.getPosi(index);
 			ctx.save();
 			ctx.beginPath();
-			ctx.arc(indexPosi.x, indexPosi.y, 0.3 * size, 0, 2 * Math.PI);
+			ctx.arc(indexPosi.x, indexPosi.y, 30, 0, 2 * Math.PI);
 			ctx.fillStyle = "#1E90FF";
 			ctx.fill();
 			ctx.closePath();
@@ -75,7 +75,7 @@
 		console.log("ing")
 		 var tou = e.targetTouches[ 0 ];
 //		 console.log(tou);
-		var index = calculate.getIndex(tou.pageX, tou.pageY);
+		var index = calculate.getIndex(tou.pageX-15, tou.pageY-15);
 		if(index) {
 			if(!flagObj[index]) {
 				UI.trace(index);
